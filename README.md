@@ -94,6 +94,34 @@ EATERY" itself, so it stands in for the whole stacked lockup; in the nav it
 lands on the same 175×46 footprint the type occupied. In the footer the
 strapline keeps only what the logo does not carry, and now reads "PUNE, INDIA".
 
+### Map
+
+`LocalityMap` renders one baked asset, `src/assets/map/beanery-locality.webp`,
+built by `scripts/build-map.py` from real OpenStreetMap tiles.
+
+It is baked rather than embedded live for two reasons. The
+`openstreetmap.org/export/embed.html` iframe proved unreliable in place — the
+Leaflet instance inside repeatedly sized itself to a fraction of the frame and
+tiled only part of it, and nothing can call `invalidateSize()` across the
+origin boundary. And OSM's tile usage policy does not cover a production site's
+traffic in any case. A baked asset always renders, needs no API key, works
+offline and costs one request.
+
+The café sits at **18.53876, 73.82974** (102/B/18, Gokhalenagar, Senapati Bapat
+Road — reverse-geocodes to Senapati Bapat Marg, Model Colony, 357 m from the
+temple). The build script centres the image on that point, which is what lets
+the pin be placed at plain `50%/50%`: with `object-fit: cover` and a centred
+position, the centre pixel stays at the centre of the frame at any aspect
+ratio, so the pin is correct in both the tall homepage panel and the wide band
+on Visit — no projection maths.
+
+The tiles are warmed into the palette with a CSS filter plus a cream multiply
+layer. Tiles are © OpenStreetMap contributors (ODbL); the attribution in the
+corner is required, not decorative.
+
+To move the pin, change `COORDS` in **both** `scripts/build-map.py` and
+`LocalityMap.jsx`, then re-run the script.
+
 ### Styles
 
 `src/styles/global.css` is the design's two style layers concatenated in the
@@ -135,6 +163,8 @@ src/styles/global.css       design system + the design's own stylesheet
 src/styles/hover.css        generated from style-hover
 src/assets/images/          all 66 slot images, plus the id -> image map
 src/assets/brand/           the wordmark, dark and light
+src/assets/map/             the baked locality map
+scripts/build-map.py        regenerates that map from OSM tiles
 _handoff/                   the original bundle, kept for reference
 ```
 
