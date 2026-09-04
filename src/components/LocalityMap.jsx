@@ -26,7 +26,7 @@ export default function LocalityMap() {
           'padding:12px 16px;transition:background .35s ease,color .35s ease',
         )}
       >
-        Get Directions ↗
+        Open in Maps ↗
       </a>
 
       {/* ODbL attribution for the tile data. */}
