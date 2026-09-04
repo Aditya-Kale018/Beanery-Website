@@ -240,11 +240,10 @@ export default function ReservationForm({ onClose, initial }) {
         Reservations
       </div>
       <h3 style={st("font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:40px;line-height:1.05;margin-top:14px")}>
-        Keep a table
+        Reserve a table
       </h3>
       <p style={st(`font-size:14.5px;line-height:1.8;color:${BODY};margin-top:14px;max-width:44ch`)}>
-        Tell us when, and we&rsquo;ll confirm by message within the hour. We keep half the room for walk-ins, so
-        there is usually space either way.
+        Share your details and preferred date. We’ll confirm the table by message. For groups over twelve, call Beanery directly.
       </p>
 
       <div style={st('display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px')}>
@@ -390,11 +389,11 @@ export default function ReservationForm({ onClose, initial }) {
           (state === 'sending' || bigParty ? 'opacity:.45;cursor:not-allowed' : 'cursor:pointer'),
         )}
       >
-        {state === 'sending' ? 'Sending…' : 'Request reservation'}
+        {state === 'sending' ? 'Sending…' : 'Request a table'}
       </button>
 
       <div style={st(`font-size:11.5px;color:${META};margin-top:16px`)}>
-        Or call +91 98609 34080 · open daily from 8 AM
+        Or call +91 98609 34080 · doors open daily at 8 AM
       </div>
     </form>
   );
