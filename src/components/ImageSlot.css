@@ -1,5 +1,5 @@
 /* Port of the <image-slot> custom element's shadow stylesheet (image-slot.js).
-   Same box model, same empty-state chrome, same dashed ring — so filled slots
+   Same box model, same empty-state chrome, same dashed ring - so filled slots
    and unfilled slots both render exactly as they do in the design. */
 
 .imgslot {

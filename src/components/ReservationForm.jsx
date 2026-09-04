@@ -11,13 +11,13 @@ import { st } from '../lib/style';
  * a Tuesday and a late booking is correctly flagged as bar-menu only.
  *
  * NOTE: `submit()` below is where a real booking endpoint goes. Right now it
- * resolves locally after a short delay and issues a reference — the form is
+ * resolves locally after a short delay and issues a reference. The form is
  * complete, the backend is not. It deliberately does not invent availability:
  * every slot within opening hours is offered, because only a real system knows
  * what is actually free.
  */
 
-// — palette, matching the design's tokens —
+// - palette, matching the design's tokens -
 const INK = '#5E2B17';
 const BODY = '#6E4A34';
 const META = '#96755C';
@@ -36,7 +36,7 @@ const selectStyle = (invalid) =>
   `${field(invalid)};appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:38px`;
 
 const SEATING = ['No preference', 'Window', 'Banquette', 'At the counter'];
-const OCCASIONS = ['—', 'Birthday', 'Anniversary', 'Business lunch', 'Celebration'];
+const OCCASIONS = ['No occasion', 'Birthday', 'Anniversary', 'Business lunch', 'Celebration'];
 
 const pad = (n) => String(n).padStart(2, '0');
 const isoDate = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
@@ -93,7 +93,7 @@ function validate(v) {
 
   if (!v.time) e.time = 'Pick a time.';
   else if (v.date && !slotsFor(v.date).includes(Number(v.time))) {
-    e.time = 'We are closed then — choose another time.';
+    e.time = 'We are closed then. Please choose another time.';
   }
 
   if (v.guests === '13+') e.guests = 'For thirteen or more, call the café and we will arrange it properly.';
@@ -271,7 +271,7 @@ export default function ReservationForm({ onClose, initial }) {
         </div>
 
         <div style={st('grid-column:1 / -1')}>
-          <div style={st(LABEL)}>Email — optional</div>
+          <div style={st(LABEL)}>Email (optional)</div>
           <input
             type="email" name="email" autoComplete="email" placeholder="you@example.com"
             value={v.email} onChange={set('email')} onBlur={blur('email')}
@@ -335,7 +335,7 @@ export default function ReservationForm({ onClose, initial }) {
         </div>
 
         <div style={st('grid-column:1 / -1;position:relative')}>
-          <div style={st(LABEL)}>Occasion — optional</div>
+          <div style={st(LABEL)}>Occasion (optional)</div>
           <select name="occasion" value={v.occasion} onChange={set('occasion')} style={st(selectStyle(false))}>
             {OCCASIONS.map((o) => <option key={o} value={o}>{o}</option>)}
           </select>
@@ -343,7 +343,7 @@ export default function ReservationForm({ onClose, initial }) {
         </div>
 
         <div style={st('grid-column:1 / -1')}>
-          <div style={st(LABEL)}>Anything we should know — optional</div>
+          <div style={st(LABEL)}>Anything we should know (optional)</div>
           <textarea
             name="notes" rows={3} maxLength={300}
             placeholder="Allergies, a high chair, a quiet corner…"
@@ -360,7 +360,7 @@ export default function ReservationForm({ onClose, initial }) {
         <div style={st(`display:flex;gap:12px;align-items:flex-start;margin-top:20px;padding:16px 18px;background:#EFE3D8`)}>
           <span style={st(`width:7px;height:7px;background:${ACCENT};display:block;margin-top:6px;flex:none`)} />
           <p style={st(`font-size:12.5px;line-height:1.7;color:${BODY}`)}>
-            The kitchen closes at 10:30 PM — that sitting is drinks and the bar menu. Book 10:00 PM or earlier for
+            The kitchen closes at 10:30 PM; that sitting is drinks and the bar menu. Book 10:00 PM or earlier for
             the full board.
           </p>
         </div>
@@ -370,7 +370,7 @@ export default function ReservationForm({ onClose, initial }) {
         <div style={st(`display:flex;gap:12px;align-items:flex-start;margin-top:20px;padding:16px 18px;background:#EFE3D8`)}>
           <span style={st(`width:7px;height:7px;background:${ACCENT};display:block;margin-top:6px;flex:none`)} />
           <p style={st(`font-size:12.5px;line-height:1.7;color:${BODY}`)}>
-            For thirteen or more we write the menu with you first —{' '}
+            For thirteen or more we write the menu with you first.{' '}
             <a href="tel:+919860934080" style={st(`color:${ACCENT};border-bottom:1px solid ${ACCENT}`)}>
               call +91 98609 34080
             </a>

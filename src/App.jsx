@@ -10,13 +10,13 @@ import './styles/hover.css';
 import './styles/motion.css';
 
 /**
- * Beanery — Coffee · Kitchen.
+ * Beanery: Coffee · Kitchen.
  *
  * A React port of the Claude Design prototype (`Beanery Website.dc.html`). The
  * prototype was itself React underneath, so the component logic below is the
  * design's own: same state shape, same content arrays, same reveal and rail
  * behaviour. The markup keeps every style as the CSS declaration string the
- * design authored, parsed by `st()` — nothing was retyped, so nothing drifted.
+ * design authored, parsed by `st()`. Nothing was retyped, so nothing drifted.
  *
  * Props mirror the three knobs the design exposed in its properties panel.
  */
@@ -37,15 +37,15 @@ export default class App extends React.Component {
   };
 
   dayparts = [
-    { key: 'Morning', hours: '08:00 — 11:30', title: 'First cups, fresh bakes', copy: 'The day starts with a dialled-in bar, warm pastry and the kind of coffee you can make a ritual of. Quick at the counter or slow at the table — both work.', slot: 'part-morning', shot: 'Morning: sunlight across the counter, espresso being pulled, croissants on a tray, one guest standing' },
-    { key: 'Afternoon', hours: '11:30 — 18:00', title: 'Lunch, filters, a little more time', copy: 'Pasta, sourdough sandwiches and filter coffees take over the table. Come for lunch, stay for a meeting, or make a second cup part of the plan.', slot: 'part-afternoon', shot: 'Afternoon: two guests at a window table mid-conversation, plated pasta and a carafe, west light' },
-    { key: 'Evening', hours: '18:00 — close', title: 'Coffee still on. Plates for the table.', copy: 'The room settles into the evening with plates to share, dessert to linger over and the espresso machine still on. Beanery does not change character after dark — it simply slows down.', slot: 'part-evening', shot: 'Evening: low warm light, shared plates and glassware on marble, candle, guests in soft focus' },
+    { key: 'Morning', hours: '08:00 to 11:30', title: 'First cups, fresh bakes', copy: 'The day starts with a dialled-in bar, warm pastry and the kind of coffee you can make a ritual of. Quick at the counter or slow at the table. Both work.', slot: 'part-morning', shot: 'Morning: sunlight across the counter, espresso being pulled, croissants on a tray, one guest standing' },
+    { key: 'Afternoon', hours: '11:30 - 18:00', title: 'Lunch, filters, a little more time', copy: 'Pasta, sourdough sandwiches and filter coffees take over the table. Come for lunch, stay for a meeting, or make a second cup part of the plan.', slot: 'part-afternoon', shot: 'Afternoon: two guests at a window table mid-conversation, plated pasta and a carafe, west light' },
+    { key: 'Evening', hours: '18:00 to close', title: 'Coffee still on. Plates for the table.', copy: 'The room settles into the evening with plates to share, dessert to linger over and the espresso machine still on. Beanery does not change character after dark - it simply slows down.', slot: 'part-evening', shot: 'Evening: low warm light, shared plates and glassware on marble, candle, guests in soft focus' },
   ];
 
   pillars = [
     { n: '01', name: 'Coffee', copy: 'Traceable coffees, dialled with care and brewed for clarity, balance and consistency.' },
     { n: '02', name: 'Kitchen', copy: 'A focused all-day menu built on fresh prep, good ingredients and dishes worth returning to.' },
-    { n: '03', name: 'Curiosity', copy: 'We taste, test and learn constantly — from new coffee lots to recipes, pairings and seasonal ideas.' },
+    { n: '03', name: 'Curiosity', copy: 'We taste, test and learn constantly, from new coffee lots to recipes, pairings and seasonal ideas.' },
     { n: '04', name: 'Hospitality', copy: 'Warm, attentive and never overdone. Good service should feel natural.' },
     { n: '05', name: 'Consistency', copy: 'The details matter every day: the shot, the loaf, the plate and the welcome.' },
   ];
@@ -168,7 +168,7 @@ export default class App extends React.Component {
       notes: 'Dark chocolate, date, walnut',
       body: '18g in, 38g out, 27 seconds',
       dish: 'Cured Ham & Comté Baguette',
-      dishNote: 'Salty ham and nutty Comté sit naturally beside a syrupy, cocoa-led doppio — compact, savoury and built for a quick counter stop.',
+      dishNote: 'Salty ham and nutty Comté sit naturally beside a syrupy, cocoa-led doppio: compact, savoury and built for a quick counter stop.',
       slot: 'pair-espresso',
       shot: 'Close-up: espresso crema in a small ceramic cup, baguette half in soft focus',
     },
@@ -203,13 +203,13 @@ export default class App extends React.Component {
     { name: 'Espresso', kicker: '27 seconds', spec: ['18 g in · 38 g out', '93°C, 9 bar', 'Served in ceramic'], copy: 'Our bar standard: a syrupy doppio with enough sweetness and structure to drink straight or carry through milk.', price: '₹180', slot: 'brew-esp', shot: 'Espresso pulling into a warm cup, crema forming' },
     { name: 'Pour-Over', kicker: '3:30 total', spec: ['15 g · 240 ml', '1:16, 92°C', 'Four-pour cascade'], copy: 'Single-origin coffee brewed to order on V60, designed to bring out clarity, aroma and the details of the lot.', price: '₹320', slot: 'brew-po', shot: 'Gooseneck kettle pouring in a spiral, steam catching daylight' },
     { name: 'French Press', kicker: '4 minutes', spec: ['30 g · 500 ml', 'Full immersion', 'Served for two'], copy: 'Full-immersion brewing gives a rounder body and softer edges. Served for two, made for a slower table.', price: '₹340', slot: 'brew-fp', shot: 'French press on a linen tray, two cups, morning table' },
-    { name: 'AeroPress', kicker: '2:10 inverted', spec: ['15 g · 200 ml', 'Inverted, one press', 'Bright and clean'], copy: 'A compact, expressive brew with a clean finish — especially good when you want sweetness and body without heaviness.', price: '₹290', slot: 'brew-ap', shot: 'AeroPress mid-plunge, barista hands, close crop' },
+    { name: 'AeroPress', kicker: '2:10 inverted', spec: ['15 g · 200 ml', 'Inverted, one press', 'Bright and clean'], copy: 'A compact, expressive brew with a clean finish, especially good when you want sweetness and body without heaviness.', price: '₹290', slot: 'brew-ap', shot: 'AeroPress mid-plunge, barista hands, close crop' },
     { name: 'Cold Brew', kicker: '18 hours', spec: ['1:8 concentrate', 'Steeped cold, never heated', 'Lychee or classic'], copy: 'Steeped cold for 18 hours and served over clear ice. Choose it classic, or with lychee for a brighter, lightly sweet finish.', price: '₹280', slot: 'brew-cb', shot: 'Tall glass of cold brew, clear ice, condensation, dark wood' },
   ];
 
   signature = [
     { kicker: 'Coffee', name: 'Lychee Cold Brew', copy: 'Cold-steeped for 18 hours, finished with lychee and a touch of cane.', slot: 'sig-1', shot: 'Lychee cold brew, tall glass, clear ice, backlit garnish' },
-    { kicker: 'Pasta', name: 'Aglio Olio', copy: 'Spaghetti, garlic, chilli and olive oil — glossy, savoury and deliberately simple.', slot: 'sig-2', shot: 'Aglio olio plated restaurant-style, chilli oil, overhead' },
+    { kicker: 'Pasta', name: 'Aglio Olio', copy: 'Spaghetti, garlic, chilli and olive oil: glossy, savoury and deliberately simple.', slot: 'sig-2', shot: 'Aglio olio plated restaurant-style, chilli oil, overhead' },
     { kicker: 'Dessert', name: 'Burnt Basque Cheesecake', copy: 'Deeply caramelised on top, creamy through the centre, and never off the favourites list.', slot: 'sig-3', shot: 'Basque cheesecake wedge plated, burnt top, cracked surface, cake fork' },
     { kicker: 'Bakery', name: 'Levain Sourdough', copy: 'Slow-fermented, baked fresh and served across the menu while it lasts.', slot: 'sig-4', shot: 'Levain loaf, scored crust, flour dust, board' },
     { kicker: 'Sandwich', name: 'Comté & Cured Ham', copy: 'Cured ham and Comté on baguette with cultured butter and cornichons.', slot: 'sig-5', shot: 'Comté and ham baguette cut clean, plated with cornichons' },
@@ -331,7 +331,7 @@ export default class App extends React.Component {
             ))}
           </nav>
           <a href="#top" onClick={goHome} style={st("text-align:center;display:flex;flex-direction:column;align-items:center;cursor:pointer")}>
-            <img src={logoDark} alt="Beanery — Coffee · Kitchen" style={st("width:175px;height:auto;display:block")} />
+            <img src={logoDark} alt="Beanery: Coffee · Kitchen" style={st("width:175px;height:auto;display:block")} />
           </a>
           <nav data-r="deskonly" style={st("display:flex;gap:26px;align-items:center;justify-content:flex-end")}>
             {navRight.map((item, i) => (
@@ -354,7 +354,7 @@ export default class App extends React.Component {
         <>
           <div data-overlay="menu" style={st("position:fixed;inset:0;z-index:150;background:#FBF8F4;display:flex;flex-direction:column;padding:26px 24px 40px")}>
             <div style={st("display:flex;justify-content:space-between;align-items:center")}>
-              <img src={logoDark} alt="Beanery — Coffee · Kitchen" style={st("width:136px;height:auto;display:block")} />
+              <img src={logoDark} alt="Beanery: Coffee · Kitchen" style={st("width:136px;height:auto;display:block")} />
               <button onClick={closeMenu} aria-label="Close menu" style={st("background:transparent;border:none;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#96755C;cursor:pointer")}>
                 Close ×
               </button>
@@ -401,7 +401,7 @@ export default class App extends React.Component {
                   </h1>
                   <div data-reveal="120" style={st("display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end;margin:56px 0 60px")}>
                     <p style={st("font-size:16.5px;line-height:1.75;color:#6E4A34;max-width:56ch")}>
-                      From traceable coffees and precise brews to sourdough, pasta and dessert, Beanery is built around the things we want to return to — made with care, served without fuss.
+                      From traceable coffees and precise brews to sourdough, pasta and dessert, Beanery is built around the things we want to return to, made with care, served without fuss.
                     </p>
                     <div style={st("display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap")}>
                       <button className="hv2" onClick={openReserve} style={st("font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:#FBF8F4;background:#5E2B17;border:none;padding:19px 34px;cursor:pointer;transition:background .35s ease")}>
@@ -415,7 +415,7 @@ export default class App extends React.Component {
                   <div data-reveal="200" style={st("display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:18px;align-items:end")}>
                     <div style={st("overflow:hidden;height:60vh;min-height:420px;background:#EFE3D8")}>
                       <div className="hv7" style={st("width:100%;height:100%;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)")}>
-                        <ImageSlot id="hero-grid-1" placeholder="Wide: the dining room in warm daylight — banquette, glassware, marble counter, guests mid-meal" />
+                        <ImageSlot id="hero-grid-1" placeholder="Wide: the dining room in warm daylight - banquette, glassware, marble counter, guests mid-meal" />
                       </div>
                     </div>
                     <div style={st("overflow:hidden;height:44vh;min-height:320px;background:#DFCBB9")}>
@@ -449,7 +449,7 @@ export default class App extends React.Component {
                       We keep the coffee list focused: distinct origins, clear flavour, and recipes dialled for the way each cup is served. The selection moves with the season.
                     </p>
                     <p style={st("font-size:14.5px;line-height:1.85;color:#6E4A34")}>
-                      The menu stays tight so the kitchen can pay attention — fresh prep, good ingredients, and dishes built to be ordered again, not just photographed once.
+                      The menu stays tight so the kitchen can pay attention: fresh prep, good ingredients, and dishes built to be ordered again, not just photographed once.
                     </p>
                     <p style={st("font-size:14.5px;line-height:1.85;color:#6E4A34")}>
                       Beanery is made for the full day: quick coffees, long lunches, work that runs over, catch-ups that turn into dinner, and one more cup when you feel like staying.
@@ -918,7 +918,7 @@ export default class App extends React.Component {
                     </div>
                     <div style={st("grid-column:span 2;overflow:hidden;background:#DFCBB9")}>
                       <div className="hv7" style={st("width:100%;height:100%;transition:transform 1.5s cubic-bezier(.2,.7,.2,1)")}>
-                        <ImageSlot id="btb-4" placeholder="Wide: the pass mid-service — plated dishes waiting under the lamp, chef wiping a rim" />
+                        <ImageSlot id="btb-4" placeholder="Wide: the pass mid-service - plated dishes waiting under the lamp, chef wiping a rim" />
                       </div>
                     </div>
                   </div>
@@ -1208,12 +1208,12 @@ export default class App extends React.Component {
                       <span style={st("font-style:italic;color:#A35730")}>brewed with care.</span>
                     </h1>
                     <p data-reveal="80" style={st("font-size:16px;line-height:1.8;color:#6E4A34;max-width:44ch;padding-bottom:14px")}>
-                      Our coffee list moves with the season. We choose traceable lots for sweetness and character, then dial each one for the way it is served — espresso, filter or milk.
+                      Our coffee list moves with the season. We choose traceable lots for sweetness and character, then dial each one for the way it is served: espresso, filter or milk.
                     </p>
                   </div>
                   <div data-reveal="140" style={st("margin-top:64px;overflow:hidden;height:62vh;min-height:430px;background:#EFE3D8")}>
                     <div className="hv6" style={st("width:100%;height:100%;transition:transform 1.6s cubic-bezier(.2,.7,.2,1)")}>
-                      <ImageSlot id="coffee-hero" placeholder="Full-width: cupping table mid-session — bowls, spoons, green and roasted lots, hands (wide editorial crop)" />
+                      <ImageSlot id="coffee-hero" placeholder="Full-width: cupping table mid-session - bowls, spoons, green and roasted lots, hands (wide editorial crop)" />
                     </div>
                   </div>
                 </div>
@@ -1387,7 +1387,7 @@ export default class App extends React.Component {
                     </p>
                     <div data-reveal="150" style={st("overflow:hidden;margin-top:40px;aspect-ratio:4/5;background:#EFE3D8")}>
                       <div className="hv7" style={st("width:100%;height:100%;transition:transform 1.5s cubic-bezier(.2,.7,.2,1)")}>
-                        <ImageSlot id="bev-hero" placeholder="Seasonal drink on marble — saffron latte in glass, cardamom and linen props, cinematic light (portrait)" />
+                        <ImageSlot id="bev-hero" placeholder="Seasonal drink on marble - saffron latte in glass, cardamom and linen props, cinematic light (portrait)" />
                       </div>
                     </div>
                   </div>
@@ -1503,7 +1503,7 @@ export default class App extends React.Component {
                         New to the bar?
                       </div>
                       <p style={st("font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;line-height:1.55;font-style:italic;margin-top:14px")}>
-                        Start with the filter flight. Three coffees side by side make it easy to taste what changes from one origin to the next — and to find the style you like.
+                        Start with the filter flight. Three coffees side by side make it easy to taste what changes from one origin to the next, and to find the style you like.
                       </p>
                       <div style={st("font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#96755C;margin-top:18px")}>
                         Ask the bar team
@@ -1547,7 +1547,7 @@ export default class App extends React.Component {
                   <div data-reveal="140" style={st("margin-top:60px;display:grid;grid-template-columns:1.6fr 1fr;gap:18px;align-items:end")}>
                     <div style={st("overflow:hidden;height:58vh;min-height:400px;background:#EFE3D8")}>
                       <div className="hv6" style={st("width:100%;height:100%;transition:transform 1.6s cubic-bezier(.2,.7,.2,1)")}>
-                        <ImageSlot id="food-hero-1" placeholder="Table presentation: a full spread — plated pasta, shared boards, glassware, linen, hands reaching (wide)" />
+                        <ImageSlot id="food-hero-1" placeholder="Table presentation: a full spread - plated pasta, shared boards, glassware, linen, hands reaching (wide)" />
                       </div>
                     </div>
                     <div style={st("overflow:hidden;height:42vh;min-height:300px;background:#DFCBB9")}>
@@ -1605,7 +1605,7 @@ export default class App extends React.Component {
                         Wider Europe
                       </h3>
                       <p style={st("font-size:14px;line-height:1.75;color:#6E4A34;margin-top:14px")}>
-                        From Viennese cakes to Lisbon custard tarts and open sandwiches — references travel, but only dishes that feel right for Beanery stay.
+                        From Viennese cakes to Lisbon custard tarts and open sandwiches - references travel. Only dishes that feel right for Beanery stay.
                       </p>
                     </div>
                   </div>
@@ -1623,7 +1623,7 @@ export default class App extends React.Component {
                         sourced around Pune
                       </h3>
                       <p style={st("font-size:15px;line-height:1.8;color:rgba(251,248,244,.82);margin-top:20px;max-width:38ch")}>
-                        Produce is sourced through the week from growers around Pune and used with as little waste as possible — trim becomes stock, surplus becomes staff lunch, and coffee grounds go back to the herb boxes.
+                        Produce is sourced through the week from growers around Pune and used with as little waste as possible: trim becomes stock, surplus becomes staff lunch, and coffee grounds go back to the herb boxes.
                       </p>
                     </div>
                     <div style={st("display:grid;grid-template-columns:1fr 1fr 1fr;border-left:1px solid rgba(251,248,244,.22)")}>
@@ -1672,7 +1672,7 @@ export default class App extends React.Component {
                   <div data-reveal="40" style={st("border:1px solid rgba(94,43,23,.16);display:grid;grid-template-columns:1.05fr 1fr")}>
                     <div style={st("overflow:hidden;min-height:640px;background:#DFCBB9")}>
                       <div className="hv7" style={st("width:100%;height:100%;transition:transform 1.6s cubic-bezier(.2,.7,.2,1)")}>
-                        <ImageSlot id="dishstory-1" placeholder="Hero dish: aglio olio plated restaurant-style — nested strands, chilli oil, parsley oil dots, dark ceramic on linen (portrait, full-bleed)" />
+                        <ImageSlot id="dishstory-1" placeholder="Hero dish: aglio olio plated restaurant-style - nested strands, chilli oil, parsley oil dots, dark ceramic on linen (portrait, full-bleed)" />
                       </div>
                     </div>
                     <div style={st("padding:54px 48px")}>
@@ -1767,7 +1767,7 @@ export default class App extends React.Component {
                       Bakery & sourdough
                     </h3>
                     <p style={st("font-size:15px;line-height:1.8;color:#6E4A34;margin-top:16px;max-width:44ch")}>
-                      Our bread starts with a slow-fermented levain and is baked fresh for the day. Loaves, croissants and focaccia move from the bakery into the menu — and when they are gone, they are gone.
+                      Our bread starts with a slow-fermented levain and is baked fresh for the day. Loaves, croissants and focaccia move from the bakery into the menu, and when they are gone, they are gone.
                     </p>
                     <div style={st("margin-top:26px")}>
                       <div style={st("display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid rgba(94,43,23,.14);font-size:14.5px")}>
@@ -1860,7 +1860,7 @@ export default class App extends React.Component {
                   </h1>
                   <div data-reveal="120" style={st("margin-top:60px;overflow:hidden;height:66vh;min-height:440px;background:#EFE3D8")}>
                     <div className="hv6" style={st("width:100%;height:100%;transition:transform 1.6s cubic-bezier(.2,.7,.2,1)")}>
-                      <ImageSlot id="story-hero" placeholder="Full-width: the room in afternoon light — occupied tables, glassware, west sun across marble (wide)" />
+                      <ImageSlot id="story-hero" placeholder="Full-width: the room in afternoon light - occupied tables, glassware, west sun across marble (wide)" />
                     </div>
                   </div>
                 </div>
@@ -1928,7 +1928,7 @@ export default class App extends React.Component {
                           Do less, better
                         </div>
                         <p style={st("font-size:14px;line-height:1.75;color:#6E4A34;margin-top:14px")}>
-                          A focused menu gives every dish more attention — and gives favourites a chance to become signatures.
+                          A focused menu gives every dish more attention, and gives favourites a chance to become signatures.
                         </p>
                       </div>
                       <div>
@@ -1995,7 +1995,7 @@ export default class App extends React.Component {
                     </div>
                     <div>
                       <p style={st("font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,2.7vw,38px);line-height:1.45;font-weight:300;max-width:38ch")}>
-                        More coffee, more baking, a roastery of our own — and future Beanery rooms that keep the same standards while finding their own rhythm.
+                        More coffee, more baking, a roastery of our own, and future Beanery rooms that keep the same standards while finding their own rhythm.
                       </p>
                       <a className="hv9" href="#top" onClick={goVisit} style={st("display:inline-flex;align-items:center;gap:12px;margin-top:36px;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;padding-bottom:8px;border-bottom:1px solid #5E2B17")}>
                         {"Visit Beanery "}
@@ -2113,7 +2113,7 @@ export default class App extends React.Component {
                       Home Brewing Workshop
                     </h3>
                     <p style={st("font-size:13.5px;line-height:1.75;color:#6E4A34;margin-top:10px")}>
-                      A practical two-hour session on grind, water, ratio and repeatable recipes — plus a take-home brew guide and 250 g of coffee.
+                      A practical two-hour session on grind, water, ratio and repeatable recipes, plus a take-home brew guide and 250 g of coffee.
                     </p>
                     <div style={st("font-size:13px;color:#96755C;margin-top:12px")}>₹1,400 · 8 seats</div>
                   </div>
@@ -2164,7 +2164,7 @@ export default class App extends React.Component {
                       Sourdough Workshop
                     </h3>
                     <p style={st("font-size:13.5px;line-height:1.75;color:#6E4A34;margin-top:10px")}>
-                      Learn the rhythm behind our loaves — shaping, scoring, baking and tasting — then take home a loaf and levain to keep going.
+                      Learn the rhythm behind our loaves: shaping, scoring, baking and tasting, then take home a loaf and levain to keep going.
                     </p>
                     <div style={st("font-size:13px;color:#96755C;margin-top:12px")}>₹1,600 · 10 seats</div>
                   </div>
@@ -2382,7 +2382,7 @@ export default class App extends React.Component {
                       Beanery to go
                     </div>
                     <h2 style={st("font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(28px,3.2vw,44px);line-height:1.05;margin-top:16px")}>
-                      Coffee, food and beans — to go
+                      Coffee, food and beans to go
                     </h2>
                     <p style={st("font-size:14.5px;line-height:1.8;color:#6E4A34;margin-top:16px;max-width:40ch")}>
                       Order coffee, food and baked goods for collection or local delivery, and take a bag of coffee home for later.
@@ -2420,7 +2420,7 @@ export default class App extends React.Component {
         <div style={st("max-width:1560px;margin:0 auto")}>
           <div style={st("display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(251,248,244,.2)")}>
             <div>
-              <img src={logoLight} alt="Beanery — Coffee · Kitchen" style={st("width:360px;max-width:100%;height:auto;display:block")} />
+              <img src={logoLight} alt="Beanery: Coffee · Kitchen" style={st("width:360px;max-width:100%;height:auto;display:block")} />
               <div style={st("font-size:9px;letter-spacing:.42em;color:rgba(251,248,244,.55);margin-top:16px;padding-left:.42em")}>
                 PUNE, INDIA
               </div>
@@ -2433,8 +2433,8 @@ export default class App extends React.Component {
                 </div>
                 <div style={st("display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:13.5px;color:rgba(251,248,244,.85)")}>
                   <span>Pune</span>
-                  <span style={st("color:rgba(251,248,244,.4)")}>Mumbai — soon</span>
-                  <span style={st("color:rgba(251,248,244,.4)")}>Bengaluru — soon</span>
+                  <span style={st("color:rgba(251,248,244,.4)")}>Mumbai, coming soon</span>
+                  <span style={st("color:rgba(251,248,244,.4)")}>Bengaluru, coming soon</span>
                 </div>
               </div>
               <div style={st("margin-top:30px;max-width:380px")}>

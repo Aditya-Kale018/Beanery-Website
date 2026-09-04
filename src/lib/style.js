@@ -2,7 +2,7 @@
 // inline `style` attribute, and several of those strings are produced at
 // runtime by the component (selected/unselected button states, profile bars).
 // Keeping the strings verbatim and parsing them here means the styles in this
-// app are byte-identical to the ones in the design — nothing is retyped into
+// app are byte-identical to the ones in the design - nothing is retyped into
 // a React object, so nothing can drift.
 
 const cache = new Map();
