@@ -34,26 +34,46 @@
 [data-overlay="reserve"] { animation: bnBackdropIn var(--dur-mid) var(--ease) both; }
 [data-overlay="reserve"] > * { animation: bnPanelIn var(--dur-slow) var(--ease) both; }
 
-/* - full-screen menu: the sheet fades up, then the links follow it in - */
+/* - mobile menu: a sheet opens from the navigation, then its content settles - */
 @keyframes bnMenuIn {
-  from { opacity: 0; transform: translateY(-10px); }
+  from { opacity: 0; clip-path: inset(0 0 100% 0); }
+  to   { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+@keyframes bnMenuHeaderIn {
+  from { opacity: 0; transform: translateY(-12px); }
   to   { opacity: 1; transform: none; }
 }
 @keyframes bnMenuItemIn {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: none; }
 }
-[data-overlay="menu"] { animation: bnMenuIn var(--dur-mid) var(--ease) both; }
-[data-overlay="menu"] nav a {
-  animation: bnMenuItemIn var(--dur-slow) var(--ease) both;
+@keyframes bnMenuFooterIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
 }
-[data-overlay="menu"] nav a:nth-child(1) { animation-delay: .06s; }
-[data-overlay="menu"] nav a:nth-child(2) { animation-delay: .10s; }
-[data-overlay="menu"] nav a:nth-child(3) { animation-delay: .14s; }
-[data-overlay="menu"] nav a:nth-child(4) { animation-delay: .18s; }
-[data-overlay="menu"] nav a:nth-child(5) { animation-delay: .22s; }
-[data-overlay="menu"] nav a:nth-child(6) { animation-delay: .26s; }
-[data-overlay="menu"] nav a:nth-child(7) { animation-delay: .30s; }
+@media (max-width:1040px) {
+  [data-overlay="menu"] {
+    animation: bnMenuIn var(--dur-mid) var(--ease) both;
+    transform-origin: top center;
+    will-change: clip-path, opacity;
+  }
+  [data-overlay="menu"] > div:first-child {
+    animation: bnMenuHeaderIn var(--dur-mid) var(--ease) .12s both;
+  }
+  [data-overlay="menu"] nav a {
+    animation: bnMenuItemIn var(--dur-slow) var(--ease) both;
+  }
+  [data-overlay="menu"] nav a:nth-child(1) { animation-delay: .16s; }
+  [data-overlay="menu"] nav a:nth-child(2) { animation-delay: .21s; }
+  [data-overlay="menu"] nav a:nth-child(3) { animation-delay: .26s; }
+  [data-overlay="menu"] nav a:nth-child(4) { animation-delay: .31s; }
+  [data-overlay="menu"] nav a:nth-child(5) { animation-delay: .36s; }
+  [data-overlay="menu"] nav a:nth-child(6) { animation-delay: .41s; }
+  [data-overlay="menu"] nav a:nth-child(7) { animation-delay: .46s; }
+  [data-overlay="menu"] > div:last-child {
+    animation: bnMenuFooterIn var(--dur-mid) var(--ease) .38s both;
+  }
+}
 
 /* - buttons: a small, unshowy press - */
 button:not(:disabled):active,

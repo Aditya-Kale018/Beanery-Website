@@ -283,6 +283,14 @@ h1,h2,h3,h4,p,figure{margin:0}
 ::-webkit-scrollbar-thumb{background:#D8BFA9}
 ::-webkit-scrollbar-track{background:#EFE3D8}
 button{font-family:inherit}
+
+/* A single page edge aligns primary sections while full-bleed panels stay intentional. */
+:root{--beanery-page-gutter:clamp(22px,2vw,32px)}
+[data-r="nav"]{padding-left:var(--beanery-page-gutter)!important;padding-right:var(--beanery-page-gutter)!important}
+section[style*="40px"]{padding-left:var(--beanery-page-gutter)!important;padding-right:var(--beanery-page-gutter)!important}
+footer{padding-left:var(--beanery-page-gutter)!important;padding-right:var(--beanery-page-gutter)!important}
+section > div[style*="max-width: 1560px"][style*="padding: 0 40px"],
+section > [data-rail]{padding-left:var(--beanery-page-gutter)!important;padding-right:var(--beanery-page-gutter)!important}
 @keyframes bnDrift{0%{transform:translateY(0)}50%{transform:translateY(-7px)}100%{transform:translateY(0)}}
 [data-navlink]{position:relative;display:inline-block}
 [data-navlink]::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:#A35730;transition:width .5s cubic-bezier(.22,.7,.2,1)}
