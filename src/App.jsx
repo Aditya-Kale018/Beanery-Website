@@ -388,7 +388,7 @@ export default class App extends React.Component {
                 <div style={st("max-width:1560px;margin:0 auto")}>
                   <div style={st("display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid rgba(94,43,23,.14)")}>
                     <div style={st("font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#A35730;font-weight:500")}>
-                      Est. 2023 · Pune, India
+                      Established 2025 · Pune, India
                     </div>
                     <div style={st("font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#96755C")}>
                       Coffee · Kitchen · All day
@@ -1850,7 +1850,7 @@ export default class App extends React.Component {
                       Our story
                     </div>
                     <div style={st("font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#96755C")}>
-                      Est. 2023 · Pune
+                      Established 2025 · Pune
                     </div>
                   </div>
                   <h1 data-reveal="0" style={st("font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(44px,7.4vw,132px);line-height:.92;letter-spacing:-.03em;margin-top:52px")}>

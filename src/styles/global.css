@@ -330,3 +330,54 @@ section > [data-rail]{padding-left:var(--beanery-page-gutter)!important;padding-
 @media (max-width:820px){
   section [style*="padding: 146px 40px 0"]{padding:130px 22px 0!important}
 }
+
+/* Small phones only: retain the desktop/tablet composition while easing tight layouts. */
+@media (max-width:600px){
+  html,body{overflow-x:hidden}
+  :root{--beanery-page-gutter:20px}
+
+  [data-r="nav"]{padding:16px 18px!important}
+  [data-r="nav"] > div{gap:8px!important}
+  [data-r="nav"] a img{width:128px!important}
+  [data-r="nav"] button[data-r="mobonly"],
+  [data-r="nav"] [data-r="mobonly"] button{min-height:44px!important}
+  [data-r="nav"] button[data-r="mobonly"]{padding:0 4px!important}
+
+  [data-overlay="menu"]{
+    padding:max(20px,env(safe-area-inset-top)) 20px max(28px,env(safe-area-inset-bottom))!important;
+    overflow-y:auto!important;
+  }
+  [data-overlay="menu"] nav{margin-top:30px!important}
+  [data-overlay="menu"] nav a{font-size:clamp(29px,8.5vw,34px)!important;padding:15px 0!important}
+  [data-overlay="menu"] button{min-height:44px}
+
+  section [style*="padding: 146px 40px 0"]{padding-top:112px!important}
+  section h1[style*="font-size: clamp(46px"]{font-size:clamp(40px,12vw,48px)!important;line-height:.94!important}
+  section [style*="height: 60vh"],
+  section [style*="height: 66vh"],
+  section [style*="height: 62vh"],
+  section [style*="height: 58vh"],
+  section [style*="height: 56vh"],
+  section [style*="height: 52vh"],
+  section [style*="height: 44vh"],
+  section [style*="height: 42vh"]{height:42svh!important;min-height:280px!important}
+
+  section > [data-rail]{
+    scroll-padding-inline:var(--beanery-page-gutter);
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+  section [style*="flex: 0 0 380px"],
+  section [style*="flex: 0 0 400px"],
+  section [style*="flex: 0 0 360px"]{flex-basis:80vw!important}
+
+  [data-overlay="reserve"]{padding:16px!important}
+  [data-overlay="reserve"] > div{
+    padding:34px 22px!important;
+    max-height:calc(100svh - 32px)!important;
+  }
+  [data-overlay="reserve"] form [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr!important}
+  [data-overlay="reserve"] input,
+  [data-overlay="reserve"] select,
+  [data-overlay="reserve"] textarea{font-size:16px!important}
+}
