@@ -673,7 +673,7 @@ export default class App extends React.Component {
                 </div>
               </section>
               <section style={st("display:grid;grid-template-columns:1fr 1fr;min-height:88vh;background:#FBF8F4")}>
-                <div style={st("padding:130px 40px 130px 70px;max-width:820px;margin-right:auto;display:flex;flex-direction:column;justify-content:center;order:2")}>
+                <div style={st("padding:130px 40px;max-width:820px;margin-right:auto;display:flex;flex-direction:column;justify-content:center;order:2")}>
                   <div data-reveal="0" style={st("font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#A35730;font-weight:500")}>
                     Our story
                   </div>
@@ -706,7 +706,7 @@ export default class App extends React.Component {
                   <div style={st("height:1px;background:rgba(94,43,23,.14)")} />
                 </div>
                 <div style={st("display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch")}>
-                  <div style={st("padding:120px 60px 120px 40px;max-width:820px;margin-left:auto")}>
+                  <div style={st("padding:120px 40px;max-width:820px;margin-left:auto")}>
                     <div data-reveal="0" style={st("font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#A35730;font-weight:500")}>
                       Coffee philosophy
                     </div>
@@ -765,7 +765,7 @@ export default class App extends React.Component {
                       <ImageSlot id="phil-food" placeholder="Ingredient detail: sourdough crumb torn open, olive oil pooling, marble and linen (full-bleed)" />
                     </div>
                   </div>
-                  <div style={st("padding:120px 40px 120px 60px;max-width:820px;order:2")}>
+                  <div style={st("padding:120px 40px;max-width:820px;order:2")}>
                     <div data-reveal="0" style={st("font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#A35730;font-weight:500")}>
                       Food philosophy
                     </div>
@@ -1101,7 +1101,7 @@ export default class App extends React.Component {
                 </div>
               </section>
               <section style={st("background:#EFE3D8;display:grid;grid-template-columns:1.1fr 1fr;align-items:stretch")}>
-                <div style={st("padding:120px 60px 120px 40px;max-width:840px;margin-left:auto")}>
+                <div style={st("padding:120px 40px;max-width:840px;margin-left:auto")}>
                   <div data-reveal="0" style={st("font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#A35730;font-weight:500")}>
                     Visit us
                   </div>
