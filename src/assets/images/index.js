@@ -47,8 +47,6 @@ import img_j_1 from './j-1.webp';
 import img_j_2 from './j-2.webp';
 import img_j_3 from './j-3.webp';
 import img_journal_lead from './journal-lead.webp';
-import img_map_home from './map-home.webp';
-import img_map_visit from './map-visit.webp';
 import img_pair_cortado from './pair-cortado.webp';
 import img_pair_espresso from './pair-espresso.webp';
 import img_pair_guji from './pair-guji.webp';
@@ -117,8 +115,6 @@ export const SLOTS = {
   'j-2': at(img_j_2),
   'j-3': at(img_j_3),
   'journal-lead': at(img_journal_lead),
-  'map-home': at(img_map_home),
-  'map-visit': at(img_map_visit),
   'pair-cortado': at(img_pair_cortado),
   'pair-espresso': at(img_pair_espresso),
   'pair-guji': at(img_pair_guji),

@@ -1,0 +1,100 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Motion.
+
+   The design's brief: "Slow and intentional: 0.78–1.1s reveals on a single
+   easing curve, 1.4–1.6s image scale on hover, no bounce, no parallax
+   gimmicks, no constant motion." Everything here uses that one curve and
+   stays inside those durations — these are the transitions the prototype
+   could not express (route changes, overlays entering) plus polish on the
+   states it already animated.
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --dur-quick: .32s;
+  --dur-mid: .55s;
+  --dur-slow: .82s;
+}
+
+/* — page change: the incoming page settles rather than snapping in — */
+@keyframes bnPageIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+[data-page-enter] {
+  animation: bnPageIn var(--dur-slow) var(--ease) both;
+}
+
+/* — reservation dialog — */
+@keyframes bnBackdropIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bnPanelIn {
+  from { opacity: 0; transform: translateY(24px) scale(.985); }
+  to   { opacity: 1; transform: none; }
+}
+[data-overlay="reserve"] { animation: bnBackdropIn var(--dur-mid) var(--ease) both; }
+[data-overlay="reserve"] > * { animation: bnPanelIn var(--dur-slow) var(--ease) both; }
+
+/* — full-screen menu: the sheet fades up, then the links follow it in — */
+@keyframes bnMenuIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes bnMenuItemIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+[data-overlay="menu"] { animation: bnMenuIn var(--dur-mid) var(--ease) both; }
+[data-overlay="menu"] nav a {
+  animation: bnMenuItemIn var(--dur-slow) var(--ease) both;
+}
+[data-overlay="menu"] nav a:nth-child(1) { animation-delay: .06s; }
+[data-overlay="menu"] nav a:nth-child(2) { animation-delay: .10s; }
+[data-overlay="menu"] nav a:nth-child(3) { animation-delay: .14s; }
+[data-overlay="menu"] nav a:nth-child(4) { animation-delay: .18s; }
+[data-overlay="menu"] nav a:nth-child(5) { animation-delay: .22s; }
+[data-overlay="menu"] nav a:nth-child(6) { animation-delay: .26s; }
+[data-overlay="menu"] nav a:nth-child(7) { animation-delay: .30s; }
+
+/* — buttons: a small, unshowy press — */
+button:not(:disabled):active,
+a[href^="tel:"]:active {
+  transform: translateY(1px);
+}
+/* — form fields — */
+input, select, textarea {
+  transition: border-color var(--dur-quick) var(--ease), background-color var(--dur-quick) var(--ease);
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #A35730 !important;
+  background-color: rgba(239, 227, 216, .35) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: #A9866B;
+  transition: color var(--dur-quick) var(--ease);
+}
+input:focus::placeholder, textarea:focus::placeholder { color: #C2A48C; }
+
+/* — keyboard focus, which the design's reset removed entirely — */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid #A35730;
+  outline-offset: 3px;
+}
+
+/* — rails: hide the scrollbar but keep the momentum — */
+[data-rail] { scrollbar-width: none; }
+[data-rail]::-webkit-scrollbar { display: none; }
+
+/* Honour a reduced-motion preference: no entrances, no scaling, no press. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  button:not(:disabled):active { transform: none; }
+}
